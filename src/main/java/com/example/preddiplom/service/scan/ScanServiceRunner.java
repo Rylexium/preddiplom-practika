@@ -1,4 +1,4 @@
-package com.example.preddiplom.service;
+package com.example.preddiplom.service.scan;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
