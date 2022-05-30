@@ -34,33 +34,33 @@ public class ScanService {
                 ConnectToUrl.transfer("bankNumber_to_bankNumber",
                         new JSONObject()
                                 .put("uuidTransaction", transaction.getUuid())
-                                .put("bankNumber1", transaction.getSenderBankNumber())
-                                .put("bankNumber2", transaction.getRecipientBankNumber())
+                                .put("senderBankNumber", transaction.getSenderBankNumber())
+                                .put("recipientBankNumber", transaction.getRecipientBankNumber())
                                 .put("value", transaction.getValue()));
             }
             else if(transaction.getSenderBankNumber() != null && transaction.getRecipientBankCard() != null) { //bankNumber to bankCard
                 ConnectToUrl.transfer("bankNumber_to_bankCard",
                         new JSONObject()
                                 .put("uuidTransaction", transaction.getUuid())
-                                .put("bankNumber", transaction.getSenderBankNumber())
-                                .put("bankCard", transaction.getRecipientBankCard())
+                                .put("senderBankNumber", transaction.getSenderBankNumber())
+                                .put("recipientBankCard", transaction.getRecipientBankCard())
                                 .put("value", transaction.getValue()));
             }
             else if(transaction.getSenderBankCard() != null && transaction.getRecipientBankNumber() != null) { //bankCard to bankNumber
                 ConnectToUrl.transfer("bankCard_to_bankNumber",
                         new JSONObject()
                                 .put("uuidTransaction", transaction.getUuid())
-                                .put("bankCard", transaction.getSenderBankCard())
-                                .put("bankNumber", transaction.getRecipientBankNumber())
+                                .put("senderBankCard", transaction.getSenderBankCard())
+                                .put("recipientBankNumber", transaction.getRecipientBankNumber())
                                 .put("value", transaction.getValue()));
             }
             else { // bankCard to bankCard
                 ConnectToUrl.transfer("bankCard_to_bankCard",
                         new JSONObject()
                                 .put("uuidTransaction", transaction.getUuid())
-                                .put("bankCard1", transaction.getSenderBankCard())
+                                .put("senderBankCard", transaction.getSenderBankCard())
                                 .put("bankCard2", transaction.getRecipientBankCard())
-                                .put("value", transaction.getValue()));
+                                .put("recipientBankCard", transaction.getValue()));
             }
         } catch (IOException e) {
             e.printStackTrace();
