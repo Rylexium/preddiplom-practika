@@ -59,8 +59,8 @@ public class ScanService {
                         new JSONObject()
                                 .put("uuidTransaction", transaction.getUuid())
                                 .put("senderBankCard", transaction.getSenderBankCard())
-                                .put("bankCard2", transaction.getRecipientBankCard())
-                                .put("recipientBankCard", transaction.getValue()));
+                                .put("recipientBankCard", transaction.getRecipientBankCard())
+                                .put("value", transaction.getValue()));
             }
         } catch (IOException e) {
             e.printStackTrace();
